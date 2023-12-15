@@ -1,0 +1,183 @@
+configuration {
+	display-drun:    " Apps";
+	display-window:  "缾 Windows";
+	show-icons:true;
+	font: "JetBrainsMono Nerd Font Medium 11";
+}
+
+* {
+	background-color:            #231F17;
+    bg:                          #231F17;
+	text-color:                  #E27D1F;
+	selbg:                       #5E480A33;
+	actbg:                       #5E480A66;
+	urgbg:                       #B88E9277;
+	winbg:                       #A37860;
+	border:						 #EE9835;
+
+	selected-normal-foreground:  @text-color;
+	normal-foreground:           @text-color;
+	selected-normal-background:  @actbg;
+	normal-background:           @background-color;
+
+	selected-urgent-foreground:  @urgbg;
+	urgent-foreground:           @text-color;
+	selected-urgent-background:  @actbg;
+	urgent-background:           @background-color;
+    urgent-foreground:           @urgbg;
+
+	selected-active-foreground:  @selbg;
+	active-foreground:           @selbg;
+	selected-active-background:  @actbg;
+	active-background:           @background-color;
+
+	line-margin:                 2;
+	line-padding:                2;
+	separator-style:             "none";
+	hide-scrollbar:              "true";
+	margin:                      0;
+	padding:                     5;
+}
+
+window {
+	location:	 east;
+	height:		 80%;
+    y-offset:    10;
+	width:		 300px;
+	orientation: vertical;
+	children:	 [mainbox];
+	border-radius: 1;
+	border-color: @border;
+	border: 2px;
+	padding: 15 15 15 15;
+}
+
+mainbox {
+	spacing:  0.8em;
+    orientation: vertical;
+	children: [inputbar, listview];
+	background-color: transparent;
+	border-radius: 4;
+	border-color: @border;
+	border: 2px;
+}
+
+
+
+inputbar {
+    orientation: vertical;
+    children: [prompt, entry];
+	background-color: transparent;
+}
+
+
+prompt {
+    background-color: transparent;
+    font:        "JetBrainsMono Nerd Font Medium 15";
+	padding: 0px 0px 3px 5px;
+}
+
+entry {
+	expand:         true;
+	text-color:     @text-color; 
+    background-color: #4B412799;
+	vertical-align: 0;
+	padding:        5px 5px 5px 5px;
+	border-radius: 5;
+    enabled:        true;
+	
+}
+
+
+
+listview {
+	background-image: url("/home/vanhg/Downloads/Picture/opacity02.png");
+  	background-opacity: 0.8;
+	spacing: 0.5em;
+	dynamic: true;
+	cycle:   true;
+	background-color: transparent;
+	wrap: true;
+}
+
+element {
+    padding: 5px;
+}
+
+
+
+
+element normal.normal {
+	
+    border-radius:    8px;
+	text-color:       @normal-foreground;
+}
+
+element normal.urgent {
+	
+    border-radius:    8px;
+	text-color:       @urgent-foreground;
+}
+
+element normal.active {
+	
+    border-radius:    8px;
+	text-color:       @active-foreground;
+	
+}
+
+element selected.normal {
+	background-color: @selected-normal-background;
+	text-color:       @selected-normal-foreground;
+	border-radius: 1;
+	border-color: @border;
+	border: 2px; 
+}
+
+element selected.urgent {
+	background-color: @selected-urgent-background;
+	text-color:       @selected-urgent-foreground;
+	
+}
+
+element selected.active {
+	background-color: @selected-active-background;
+	text-color:       @selected-active-foreground;
+
+}
+
+element alternate.normal {
+	
+    border-radius:    8px;
+	text-color:       @normal-foreground;
+}
+
+element alternate.urgent {
+	
+    border-radius:    8px;
+	text-color:       @urgent-foreground;
+}
+
+element alternate.active {
+	background-color: @bg;border-radius:    8px;
+	text-color:       @active-foreground;
+}
+element-icon {
+	size: 4ch;
+	background-color: transparent;
+	font: "JetBrainsMono Nerd Font Medium 10";
+}
+element.selected {
+    border-radius: 8px;
+	border:           0 0 0 5px solid;
+	border-color:	    @winbg;
+}
+element-text{
+    background-color: transparent;
+    text-color:       inherit;
+	padding: 5px;
+	markup-rows: true;
+	font: "JetBrainsMono Nerd Font Medium 11";
+}
+
+

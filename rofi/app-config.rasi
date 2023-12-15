@@ -1,0 +1,144 @@
+configuration {
+  display-drun: " ";
+  display-window: " ";
+  drun-display-format: "{icon} {name}";
+  font: "JetBrainsMono Nerd Font Medium 11";
+  modi: "drun,window,filebrowser";
+  show-icons: true;
+  icon-theme: "Papirus";
+  display-run:                " ";
+  display-filebrowser:        " ";
+  drun-display-format:        "{name}";
+
+}
+
+/*---------- File browser settings ----------*/
+filebrowser {
+  directory: "/home";
+  directories-first: true;
+  sorting-method:    "name";
+}
+
+
+@theme "/dev/null"
+
+* {
+  bg: #231F17;
+  bg-op: #171A13aa;
+  bg-alt: #E27D1F;
+  bg-selected: #5E480Add;
+
+  bg-border: #EE9835;
+  fg: #241005;
+  fg-alt: #E27D1F;
+}
+
+window {
+  width: 34%;
+  background-color: @bg;
+  border-radius: 1;
+  border-color: @bg-border;
+  border: 2px;
+  padding: 15 15 15 15;
+}
+
+mainbox {
+  children: [inputbar, listview];
+  background-color: transparent;
+  border-radius: 4;
+  border-color: @bg-border;
+  border: 2px;
+}
+
+
+
+element {
+  padding: 8 12;
+  background-color: transparent;
+  text-color: @fg-alt;
+}
+
+element selected {
+  text-color: @fg-alt;
+  background-color: @bg-selected;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: 17;
+  padding: 0 10 0 0;
+  background-color: transparent;
+}
+
+entry {
+  padding: 12;
+  background-color: @bg-alt;
+  text-color: @fg;
+}
+
+inputbar {
+  children: [textbox-prompt-colon, entry, "mode-switcher"];
+  background-color: @bg;
+  
+}
+
+listview {
+  
+  background-image: url("/home/vanhg/Downloads/Picture/opacity02.png");
+  background-opacity: 0.8;
+  background-color: @bg-op;
+  opacity: 0.64;
+  columns: 1;
+  lines: 6;
+}
+
+
+prompt {
+  enabled: true;
+  padding: 8 8 0 10;
+  background-color: @bg-alt;
+  
+  text-color: @fg;
+  
+  font: "JetBrainsMono Nerd Font Medium 14";
+}
+
+textbox-prompt-colon {
+  enabled:                     true;
+  expand:                      false;
+  str:                         "      ";
+  
+  background-color: @bg-alt;
+  background-image: url("/home/vanhg/Downloads/Picture/tva_logo.png", height);
+  background-repeat: none;
+  text-color: @fg;
+  font: "JetBrainsMono Nerd Font Medium 14";
+}
+
+mode-switcher{
+    enabled:                     true;
+    spacing:                     5px;
+    padding:                     1 1 1 1;
+    background-color:            @bg-alt;
+    text-color:                  @fg;
+    
+}
+button {
+    width:                       40px;
+    padding:                     5px 1px 5px 5px;
+    border-radius:               3;
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      pointer;
+    font: "JetBrainsMono Nerd Font Medium 14";
+}
+button selected {
+    background-color:            #694027;
+    text-color:                  @fg;
+}
+

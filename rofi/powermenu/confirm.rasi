@@ -1,0 +1,37 @@
+/* Confirm Dialog */
+
+* {
+    background-color:       #231F17;
+    text-color:             #E27D1F;
+	font:				 	"JetBrainsMono Nerd Font Medium 12";
+}
+
+window {
+    width:      			280px;
+    padding:    			25px;
+    border:					2px;
+    border-radius:          3px;
+    border-color:           #EE9835;
+    location:               center;
+    y-offset:               -2em;
+    
+}
+
+mainbox {
+    background-color: transparent;
+}
+
+inputbar {
+    background-color: transparent;
+}
+
+prompt {
+    background-color: transparent;
+}
+
+entry {
+    expand: 				true;
+    text-color:				#F7E39B;
+    background-color:       transparent;
+    
+}
